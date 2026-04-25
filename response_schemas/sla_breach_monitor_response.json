@@ -1,0 +1,15 @@
+{
+  "agent_name": "SLA Breach Monitor Agent",
+  "agent_id": "69ec63aadf3c614277735556",
+  "description": "Monitors SLA compliance every 30 minutes, posts breach tweets for overdue complaints.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "result": {
+      "breached_count": "number",
+      "breached_complaints": "array",
+      "timestamp": "string"
+    }
+  }
+}

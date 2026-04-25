@@ -1,0 +1,32 @@
+{
+  "agent_name": "DispatcherAgent",
+  "agent_id": "69ec63abc92502fd15549142",
+  "description": "Routes civic complaints to correct government departments via Slack notifications and Gmail email dispatch with structured work orders.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "has_knowledge_base": true,
+  "rag_id": "69ec62fdf21aec41d26fc448",
+  "response_schema": {
+    "result": {
+      "complaint_id": "string",
+      "department_assigned": "string",
+      "slack_channel": "string",
+      "email_sent_to": "array",
+      "email_subject": "string",
+      "sla_deadline": "string",
+      "dispatch_time": "string",
+      "work_order_id": "string",
+      "issue_type": "string",
+      "severity": "string",
+      "description": "string",
+      "photo_url": "string",
+      "lat": "number",
+      "lng": "number",
+      "area_name": "string",
+      "ward_number": "number",
+      "zone": "string",
+      "hotspot": "boolean"
+    }
+  }
+}

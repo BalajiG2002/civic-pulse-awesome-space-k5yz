@@ -1,0 +1,18 @@
+{
+  "agent_name": "SocialAmplifierAgent",
+  "agent_id": "69ec63a962c85fb35091fe07",
+  "description": "Posts alert tweets for P1 critical complaints via Twitter. Skips non-P1 complaints.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "result": {
+      "tweet_url": "string",
+      "tweet_content": "string",
+      "posted": "boolean",
+      "skipped": "boolean",
+      "reason": "string",
+      "complaint_id": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "agent_name": "Resolution Tweet Agent",
+  "agent_id": "69ec63a9e262aa46ad15400b",
+  "description": "Posts resolution tweets when P1 complaints are resolved, crediting departments.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "result": {
+      "tweet_url": "string",
+      "tweet_content": "string",
+      "resolution_time_display": "string",
+      "complaint_id": "string",
+      "posted": "boolean"
+    }
+  }
+}

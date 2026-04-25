@@ -1,0 +1,24 @@
+{
+  "agent_name": "ClassifierAgent",
+  "agent_id": "69ec63aa913abe53de5493db",
+  "description": "Classifies complaints into categories (ROADS/WATER/POWER/HEALTH/SAFETY/OTHER) and assigns severity (P1/P2/P3) using classification guide KB.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "has_knowledge_base": true,
+  "rag_id": "69ec62fcf46eb457ee3dece3",
+  "response_schema": {
+    "result": {
+      "complaint_id": "string",
+      "issue_type": "string",
+      "severity": "string",
+      "sla_hours": "number",
+      "description": "string",
+      "confidence_score": "number",
+      "photo_url": "string",
+      "lat": "number",
+      "lng": "number",
+      "area_name": "string"
+    }
+  }
+}

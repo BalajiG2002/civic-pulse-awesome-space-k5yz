@@ -1,0 +1,131 @@
+{
+  "app_name": "JanSeva AI",
+  "agents": {
+    "verifier_agent": {
+      "agent_id": "69ec634d3d7bb6a97c4dbdef",
+      "name": "VerifierAgent",
+      "type": "sub-agent",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": [],
+      "knowledge_base": null
+    },
+    "classifier_agent": {
+      "agent_id": "69ec63aa913abe53de5493db",
+      "name": "ClassifierAgent",
+      "type": "sub-agent",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": [],
+      "knowledge_base": {
+        "rag_id": "69ec62fcf46eb457ee3dece3",
+        "rag_name": "jansevaclassificationguidegi0l",
+        "display_name": "JanSeva Classification Guide"
+      }
+    },
+    "geo_cluster_agent": {
+      "agent_id": "69ec63abe262aa46ad15400d",
+      "name": "GeoClusterAgent",
+      "type": "sub-agent",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": [],
+      "knowledge_base": {
+        "rag_id": "69ec62fce01f11b1c83837bf",
+        "rag_name": "bengaluruwarddatabasez8l3",
+        "display_name": "Bengaluru Ward Database"
+      }
+    },
+    "dispatcher_agent": {
+      "agent_id": "69ec63abc92502fd15549142",
+      "name": "DispatcherAgent",
+      "type": "sub-agent",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": ["SLACK_CHAT_POST_MESSAGE", "SLACK_FIND_CHANNELS", "GMAIL_SEND_EMAIL"],
+      "knowledge_base": {
+        "rag_id": "69ec62fdf21aec41d26fc448",
+        "rag_name": "departmentcontactdirectoryt4vu",
+        "display_name": "Department Contact Directory"
+      }
+    },
+    "social_amplifier_agent": {
+      "agent_id": "69ec63a962c85fb35091fe07",
+      "name": "SocialAmplifierAgent",
+      "type": "sub-agent",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": ["TWITTER_CREATION_OF_A_POST"],
+      "knowledge_base": null
+    },
+    "resolution_tweet_agent": {
+      "agent_id": "69ec63a9e262aa46ad15400b",
+      "name": "Resolution Tweet Agent",
+      "type": "independent",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": ["TWITTER_CREATION_OF_A_POST"],
+      "knowledge_base": null
+    },
+    "sla_breach_agent": {
+      "agent_id": "69ec63aadf3c614277735556",
+      "name": "SLA Breach Monitor Agent",
+      "type": "independent-scheduled",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": ["TWITTER_CREATION_OF_A_POST"],
+      "knowledge_base": null
+    },
+    "manager_agent": {
+      "agent_id": "69ec63cb14ac76855da37886",
+      "name": "Complaint Pipeline Manager",
+      "type": "manager",
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "tools": ["TELEGRAM_SEND_MESSAGE", "TELEGRAM_GET_UPDATES", "TELEGRAM_SEND_PHOTO"],
+      "knowledge_base": null,
+      "managed_agents": [
+        "69ec634d3d7bb6a97c4dbdef",
+        "69ec63aa913abe53de5493db",
+        "69ec63abe262aa46ad15400d",
+        "69ec63abc92502fd15549142",
+        "69ec63a962c85fb35091fe07"
+      ]
+    }
+  },
+  "knowledge_bases": {
+    "classification_guide": {
+      "rag_id": "69ec62fcf46eb457ee3dece3",
+      "rag_name": "jansevaclassificationguidegi0l",
+      "display_name": "JanSeva Classification Guide",
+      "used_by_agent": "ClassifierAgent"
+    },
+    "ward_database": {
+      "rag_id": "69ec62fce01f11b1c83837bf",
+      "rag_name": "bengaluruwarddatabasez8l3",
+      "display_name": "Bengaluru Ward Database",
+      "used_by_agent": "GeoClusterAgent"
+    },
+    "department_directory": {
+      "rag_id": "69ec62fdf21aec41d26fc448",
+      "rag_name": "departmentcontactdirectoryt4vu",
+      "display_name": "Department Contact Directory",
+      "used_by_agent": "DispatcherAgent"
+    }
+  },
+  "schedules": {
+    "sla_breach_monitor": {
+      "schedule_id": "69ec63cae35ffb1f44aa6641",
+      "agent_id": "69ec63aadf3c614277735556",
+      "cron_expression": "*/30 * * * *",
+      "timezone": "Asia/Kolkata",
+      "is_active": false,
+      "message": "Run SLA breach check now. Query all complaints where sla_deadline has passed and status is not resolved or breached. For each breach, generate and post a tweet, update status, and log to audit."
+    }
+  },
+  "database": {
+    "status": "provisioned",
+    "db_name": "app_c3e79c9b13c69e2fe960bcd6",
+    "collections": ["users", "complaints", "departments", "audit_log"]
+  }
+}

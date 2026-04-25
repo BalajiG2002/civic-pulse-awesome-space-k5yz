@@ -1,0 +1,24 @@
+{
+  "agent_name": "GeoClusterAgent",
+  "agent_id": "69ec63abe262aa46ad15400d",
+  "description": "Maps complaint locations to BBMP wards, zones, and GPS coordinates using knowledge base lookup with web crawl fallback. Detects complaint hotspot clusters.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "has_knowledge_base": true,
+  "rag_id": "69ec62fce01f11b1c83837bf",
+  "response_schema": {
+    "result": {
+      "complaint_id": "string",
+      "area_name": "string",
+      "ward_number": "number",
+      "zone": "string",
+      "lat": "number",
+      "lng": "number",
+      "hotspot": "boolean",
+      "hotspot_cluster_id": "string",
+      "nearby_complaints": "number",
+      "geocoded_address": "string"
+    }
+  }
+}

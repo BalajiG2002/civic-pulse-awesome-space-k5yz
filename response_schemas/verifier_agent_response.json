@@ -1,0 +1,23 @@
+{
+  "agent_name": "VerifierAgent",
+  "agent_id": "69ec634d3d7bb6a97c4dbdef",
+  "description": "Validates photo is a civic issue, extracts EXIF GPS, geocodes via Nominatim, checks duplicates, generates JSV-XXXX complaint ID.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "result": {
+      "complaint_id": "string",
+      "photo_url": "string",
+      "description": "string",
+      "lat": "number",
+      "lng": "number",
+      "area_name": "string",
+      "verified": "boolean",
+      "duplicate": "boolean",
+      "existing_complaint_id": "string",
+      "reason": "string",
+      "timestamp": "string"
+    }
+  }
+}
